@@ -1,0 +1,23 @@
+Please try to format the output into a json style:
+{"Content": {
+    Mark: ,
+    Comment: ,
+  },
+  "Statement": {
+    Mark: ,
+    Comment: ,
+  },
+  "Organization": {
+    Mark: ,
+    Comment: ,
+  },
+  "Readability": {
+    Mark: ,
+    Comment: ,
+  },
+  "Grammar": {
+    Mark: ,
+    Comment: ,
+  },
+  "Overall Comment":
+}
