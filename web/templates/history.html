@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <title>This is history</title>
+    {% if data%}
+    <h1>Data Found!{{ name }}!</h1>
+    {% else %}
+    <h1>Data Not Found!</h1>
+    {% endif %}
+
+    {%if id%}
+    <p>Now work with id {{id}}</p>
+    {%else%}
+    <p>Now work with history page</p>
+    {%endif%}
+</body>
+
+</html>
