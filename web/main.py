@@ -2,6 +2,7 @@ import pandas as pd
 import base64
 import pickle
 import json
+from ocr import getText
 import numpy as np
 import cv2 as cv
 # from AutoChecker import autochecker
@@ -26,9 +27,11 @@ def decode_img(img_raw):
 
 def Writing_Recognization(img):
     # TODO: recognize the writing in the image
-    TOPIC = ""
-    ESSAY = ""
-    return TOPIC, ESSAY
+    content = getText(img)
+    #TOPIC = ""
+    #ESSAY = ""
+    #return TOPIC, ESSAY
+    return content
 
 
 def Marking_Commenting(TOPIC, ESSAY):
