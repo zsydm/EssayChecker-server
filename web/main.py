@@ -6,7 +6,8 @@ from ocr import getText
 import numpy as np
 import cv2 as cv
 # from AutoChecker import autochecker
-
+from picamera import PiCamera
+from time import sleep
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
@@ -14,7 +15,15 @@ app = Flask(__name__)
 database_path = "web/database/data.csv"
 database = pd.read_csv(database_path)
 
-
+def get("image")
+    camera = PiCamera()
+    camera.start_preview()
+    sleep(5)
+    camera.capture('/home/pi/Desktop/image.jpg')
+    camera.stop_preview()
+    img = cv2.imread('/home/pi/Desktop/image.jpg')
+    
+    return img
 def new_id():
     # NOTE: assign a new id to the new image
     return database.index.max() + 1
@@ -51,8 +60,8 @@ def img_upload():
     json_out = {}
     try:
         # FIXME: check if the image is valid
-        img_raw = request.form.get("image")
-        img = decode_img(img_raw)
+        img_raw = request.form.get()
+        img = decode_img(img_raw) 
         json_out["ID"] = new_id()
         json_out["status"] = "success"
 
