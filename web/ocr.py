@@ -38,7 +38,7 @@ def getText(img):
     # 是否返回文本位置信息
     location = "false"
     # 图片上传接口地址
-    r = requests.post(URL, headers=getHeader(language, location), data=str(img)
+    r = requests.post(URL, headers=getHeader(language, location), data=str(img,'utf-8'))
     result = str(r.content,'utf-8')
     data = json.loads(result)
     content = jsonpath.jsonpath(data,'$..content') # 文件对象   jsonpath语法
