@@ -32,13 +32,13 @@ def getBody(filepath):
         imgfile = f.read()
     data = {'image': str(base64.b64encode(imgfile), 'utf-8')}
     return data
-def getText(picFilePath):
+def getText(img):
     # 语种设置
     language = "en"
     # 是否返回文本位置信息
     location = "false"
     # 图片上传接口地址
-    r = requests.post(URL, headers=getHeader(language, location), data=getBody(picFilePath))
+    r = requests.post(URL, headers=getHeader(language, location), data=str(img)
     result = str(r.content,'utf-8')
     data = json.loads(result)
     content = jsonpath.jsonpath(data,'$..content') # 文件对象   jsonpath语法
